@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6301EE03-0927-4BD2-B18E-1C683857C05B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FlexSystem.V11.Application</RootNamespace>
+    <AssemblyName>FlexSystem.V11.Application.Rr06ls</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>FlexSystem.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FlexSystem, Version=2.30708.1.0, Culture=neutral, PublicKeyToken=7240aafc463cbd6f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>V:\CSharp\Framework2.0\Common\Resources\DLL\FlexSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="FlexSystem.Table, Version=2.0.1.0, Culture=neutral, PublicKeyToken=df8c284f43bd2d06, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>V:\CSharp\Framework2.0\DataTable\Resources\DLL\FlexSystem.Table.dll</HintPath>
+    </Reference>
+    <Reference Include="FlexSystem.V11.Application.BaseClass, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cadeb0db0bc3d48a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>V:\CSharp\Framework2.0\V11Application\Resources\DLL\FlexSystem.V11.Application.BaseClass.dll</HintPath>
+    </Reference>
+    <Reference Include="FlexSystem.V11.Core, Version=2.0.6.616, Culture=neutral, PublicKeyToken=cadeb0db0bc3d48a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>V:\CSharp\Framework2.0\V11\Resources\DLL\FlexSystem.V11.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="flexsystem.v11.domainobject.billingdobj">
+      <HintPath>..\..\..\FLX11.PMS.SQL\flexsystem.v11.domainobject.billingdobj.dll</HintPath>
+    </Reference>
+    <Reference Include="flexsystem.v11.domainobject.rentaldobj">
+      <HintPath>V:\csharp\framework2.0\tailor\laws\dll\flexsystem.v11.domainobject.rentaldobj.dll</HintPath>
+    </Reference>
+    <Reference Include="flexsystem.v11.io.rental, Version=2.0.6.616, Culture=neutral, PublicKeyToken=cadeb0db0bc3d48a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\FLX11.PMS.SQL\flexsystem.v11.io.rental.dll</HintPath>
+    </Reference>
+    <Reference Include="FlexSystem.V11.System, Version=2.0.6.616, Culture=neutral, PublicKeyToken=cadeb0db0bc3d48a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>V:\CSharp\Framework2.0\V11\Resources\DLL\FlexSystem.V11.System.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Data.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rr06ls.cs" />
+    <Compile Include="Rr06ls.Data.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FlexSystem.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup />
+  <PropertyGroup>
+    <PostBuildEvent>if $(ConfigurationName) == Debug if exist F:\Project\ xcopy $(TargetPath) F:\Project\LawProperty\dll /y</PostBuildEvent>
+  </PropertyGroup>
+</Project>
